@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html onclick="alert('b')">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			div{
+				padding: 200px;
+			}
+		</style>
+	</head>
+	<body onclick="alert('a')">
+		<div id="div1" style="background: #ccc;" onclick="alert(this.style.background)">
+			<div id="div2" style="background: blueviolet;" onclick="alert(this.style.background)">
+				<div id="div3" style="background: red;" onclick="alert(this.style.background)"></div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: #ccc;
+				display: none;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var oBut1=document.getElementById('but1');
+				var oDiv1=document.getElementById('div1');
+				oBut1.onclick=function(ev){
+					//兼容IE（event）和火狐（使用的是系统提供的ev参数）
+					var oEvent=ev||event;
+					oDiv1.style.display='block';
+					//发生了事件冒泡
+					//alert("按钮以点击");
+					//取消事件冒泡
+					oEvent.cancelBubble=true;
+				}
+				document.onclick=function(){
+					oDiv1.style.display='none';
+					//alert("document以点击");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input id="but1" type="button" value="显示" />
+		<div id="div1"></div>
+	</body>
+</html>
